@@ -95,6 +95,24 @@ nav.scrolled {
     gap: 1rem;
 }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-primary);
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
 .btn {
     padding: 0.6rem 1.5rem;
     border-radius: 12px;
@@ -136,7 +154,7 @@ nav.scrolled {
 }
 
 .hero-content h2 {
-    font-size: 4.5rem;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
     line-height: 1.1;
     margin-bottom: 1.5rem;
     animation: fadeInUp 0.8s ease-out;
@@ -353,27 +371,93 @@ footer {
 
 /* Responsive */
 @media (max-width: 968px) {
+    nav {
+        padding: 1rem 5%;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(18, 18, 18, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: var(--transition);
+        z-index: 1000;
+        gap: 2.5rem;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+    .nav-btns {
+        display: none;
+    }
+
     .hero {
         flex-direction: column;
         padding-top: 120px;
         text-align: center;
-        height: auto;
+        min-height: auto;
     }
 
-    .hero-content h2 {
-        font-size: 3rem;
+    .hero-content {
+        margin-bottom: 50px;
+        width: 100%;
     }
 
     .hero-content p {
         margin: 0 auto 2.5rem;
     }
 
-    .search-bar {
-        margin: 0 auto;
-    }
-
     .hero-image img {
         max-width: 100%;
         margin-top: 50px;
+        filter: drop-shadow(0 0 30px rgba(255, 203, 5, 0.2));
+    }
+
+    .search-bar {
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .search-bar input {
+        padding: 10px 15px;
+    }
+
+    .search-bar button {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .section {
+        padding: 60px 5%;
+    }
+
+    .section-title h3 {
+        font-size: 2rem;
+    }
+
+    .category-card {
+        height: 300px;
+    }
+
+    .footer-content {
+        gap: 2rem;
     }
 }
