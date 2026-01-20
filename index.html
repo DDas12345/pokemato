@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemato | Official Pokémon Dining Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description"
+        content="Welcome to the Official Pokemato Portal. Discover regional Pokémon-themed restaurants, exclusive menus, and the best culinary experiences in the Pokémon world.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pokemato.official/">
+    <meta property="og:title" content="Pokemato | Official Pokémon Dining Portal">
+    <meta property="og:description"
+        content="Discover regional Pokémon-themed restaurants and exclusive menus. Official Portal for All Pokémon Foodies.">
+    <meta property="og:image" content="assets/hero.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Pokemato | Official Pokémon Dining Portal">
+    <meta property="twitter:description"
+        content="Explore the best Pokémon-themed dining across Kanto, Johto, and beyond.">
+    <meta property="twitter:image" content="assets/hero.png">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="logo-container">
+            <img src="assets/logo.png" alt="Pokemato Logo">
+            <h1>POKEMATO</h1>
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#restaurants">Restaurants</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-btns">
+            <button class="btn btn-signin">Sign in</button>
+            <button class="btn btn-signup">Sign up</button>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-bg-blob"></div>
+        <div class="hero-content">
+            <h2>Catch the Best<br><span style="color: var(--primary-red);">Pokémon</span> Flavors</h2>
+            <p>Discover the most legendary dining spots across Kanto, Johto, and beyond. From fiery grills to forest
+                cafes.</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for restaurant, cuisine or a Pokémon...">
+                <button>Search</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="assets/hero.png" alt="Master Chef Pikachu">
+        </div>
+    </section>
+
+    <section class="section" id="categories">
+        <div class="section-title">
+            <h3>Explore by Type</h3>
+            <p>Find your flavor by exploring different habitats</p>
+        </div>
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="assets/forest.png" alt="Forest Cafe">
+                <div class="category-overlay">
+                    <h4>Forest Flavors</h4>
+                    <p>Greeneries & Herb-based dishes</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="assets/volcano.png" alt="Volcano Grill">
+                <div class="category-overlay">
+                    <h4>Volcano Grill</h4>
+                    <p>Spicy & Roasted masterpieces</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="assets/ocean.png" alt="Ocean Eats">
+                <div class="category-overlay">
+                    <h4>Ocean Eats</h4>
+                    <p>Coming soon to Seafoam Islands</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="assets/electric.png" alt="Electric Energy">
+                <div class="category-overlay">
+                    <h4>Electric Energy</h4>
+                    <p>Juicy burgers & Recharge drinks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="menu">
+        <div class="section-title">
+            <h3>Featured Menus</h3>
+            <p>Signature dishes from our elemental kitchens</p>
+        </div>
+        <div class="category-grid">
+            <div class="glass" style="padding: 30px;">
+                <h4 style="color: var(--pokemon-blue); margin-bottom: 20px;">🌊 Ocean Delicacies</h4>
+                <ul style="list-style: none; color: var(--text-secondary);">
+                    <li style="margin-bottom: 15px; display: flex; justify-content: space-between;">
+                        <span>Lapras Blue Sushi Roll</span>
+                        <span style="color: white; font-weight: 600;">$24.00</span>
+                    </li>
+                    <li style="margin-bottom: 15px; display: flex; justify-content: space-between;">
+                        <span>Shellder Pearl Soup</span>
+                        <span style="color: white; font-weight: 600;">$18.00</span>
+                    </li>
+                    <li style="margin-bottom: 15px; display: flex; justify-content: space-between;">
+                        <span>Magikarp Sashimi (Seasonal)</span>
+                        <span style="color: white; font-weight: 600;">$32.00</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="glass" style="padding: 30px;">
+                <h4 style="color: var(--pokemon-yellow); margin-bottom: 20px;">⚡ Electric Energy Combo</h4>
+                <ul style="list-style: none; color: var(--text-secondary);">
+                    <li style="margin-bottom: 15px; display: flex; justify-content: space-between;">
+                        <span>Volt Shock Burger</span>
+                        <span style="color: white; font-weight: 600;">$19.50</span>
+                    </li>
+                    <li style="margin-bottom: 15px; display: flex; justify-content: space-between;">
+                        <span>Thunderbolt Fries</span>
+                        <span style="color: white; font-weight: 600;">$8.00</span>
+                    </li>
+                    <li style="margin-bottom: 15px; display: flex; justify-content: space-between;">
+                        <span>Pikachu Spark Fizz</span>
+                        <span style="color: white; font-weight: 600;">$12.00</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h1>Pokemato</h1>
+                <p>Bringing the Pokémon world's best food to your doorstep since 1996.</p>
+            </div>
+            <div class="footer-links">
+                <h5>Discover</h5>
+                <ul>
+                    <li><a href="#">New Restaurants</a></li>
+                    <li><a href="#">Top Rated</a></li>
+                    <li><a href="#">Gifting</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Legal</h5>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Support</h5>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Regional Office</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Pokemato Inc. All rights reserved. Created with &hearts; for Pokémon fans.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
