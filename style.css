@@ -264,34 +264,113 @@ nav.scrolled {
 
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
 }
 
 .category-card {
-    height: 400px;
+    height: 320px;
     position: relative;
-    border-radius: 25px;
+    border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
     transition: var(--transition);
     display: flex;
     flex-direction: column;
+    border: 1px solid var(--glass-border);
 }
 
-.card-content-center {
-    height: 100%;
+.category-card.type-card {
+    background: var(--card-bg);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     text-align: center;
 }
 
-.card-content-center h1 {
-    font-size: 3rem;
+.type-icon {
+    font-size: 3.5rem;
     margin-bottom: 10px;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+    z-index: 2;
+    transition: var(--transition);
+}
+
+.category-card:hover .type-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Type Specific Gradients */
+.type-normal {
+    background: linear-gradient(135deg, #A8A77A, #C6C6A7);
+}
+
+.type-fire {
+    background: linear-gradient(135deg, #EE8130, #F08030);
+}
+
+.type-water {
+    background: linear-gradient(135deg, #6390F0, #6890F0);
+}
+
+.type-electric {
+    background: linear-gradient(135deg, #F7D02C, #F8D030);
+}
+
+.type-grass {
+    background: linear-gradient(135deg, #7AC74C, #78C850);
+}
+
+.type-ice {
+    background: linear-gradient(135deg, #96D9D6, #98D8D8);
+}
+
+.type-fighting {
+    background: linear-gradient(135deg, #C22E28, #C03028);
+}
+
+.type-poison {
+    background: linear-gradient(135deg, #A33EA1, #A040A0);
+}
+
+.type-ground {
+    background: linear-gradient(135deg, #E2BF65, #E0C068);
+}
+
+.type-flying {
+    background: linear-gradient(135deg, #A98FF3, #A890F0);
+}
+
+.type-psychic {
+    background: linear-gradient(135deg, #F95587, #F85888);
+}
+
+.type-bug {
+    background: linear-gradient(135deg, #A6B91A, #A8B820);
+}
+
+.type-rock {
+    background: linear-gradient(135deg, #B6A136, #B8A038);
+}
+
+.type-ghost {
+    background: linear-gradient(135deg, #735797, #705898);
+}
+
+.type-dragon {
+    background: linear-gradient(135deg, #6F35FC, #7038F8);
+}
+
+.type-steel {
+    background: linear-gradient(135deg, #B7B7CE, #B8B8D0);
+}
+
+.type-fairy {
+    background: linear-gradient(135deg, #D685AD, #EE99AC);
+}
+
+.type-dark {
+    background: linear-gradient(135deg, #705746, #705848);
 }
 
 .category-card img {
@@ -299,6 +378,10 @@ nav.scrolled {
     height: 100%;
     object-fit: cover;
     transition: var(--transition);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 .category-card:hover img {
@@ -310,14 +393,20 @@ nav.scrolled {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 30px;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
     color: white;
+    z-index: 3;
 }
 
 .category-overlay h4 {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
+    font-size: 1.2rem;
+    margin-bottom: 3px;
+}
+
+.category-overlay p {
+    font-size: 0.85rem;
+    opacity: 0.9;
 }
 
 /* Animations */
@@ -662,4 +751,57 @@ footer {
     .footer-content {
         gap: 2rem;
     }
+}
+/* Pokémon Type Colors */
+.type-normal { --type-color: #A8A878; }
+.type-fire { --type-color: #F08030; }
+.type-water { --type-color: #6890F0; }
+.type-electric { --type-color: #F8D030; }
+.type-grass { --type-color: #78C850; }
+.type-ice { --type-color: #98D8D8; }
+.type-fighting { --type-color: #C03028; }
+.type-poison { --type-color: #A040A0; }
+.type-ground { --type-color: #E0C068; }
+.type-flying { --type-color: #A890F0; }
+.type-psychic { --type-color: #F85888; }
+.type-bug { --type-color: #A8B820; }
+.type-rock { --type-color: #B8A038; }
+.type-ghost { --type-color: #705898; }
+.type-dragon { --type-color: #7038F8; }
+.type-steel { --type-color: #B8B8D0; }
+.type-fairy { --type-color: #EE99AC; }
+.type-dark { --type-color: #705848; }
+
+/* Type Symbol in Card */
+.type-symbol {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: var(--type-color, rgba(255, 255, 255, 0.2));
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Enhancing Overlay to use type color for border */
+.category-card {
+    border-bottom: 3px solid var(--type-color, transparent);
+}
+
+.category-overlay h4 {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.category-overlay .theme-name {
+    font-size: 0.9em;
+    opacity: 0.9;
+    font-weight: 400;
+    margin-left: 5px;
 }
