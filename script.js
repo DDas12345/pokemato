@@ -115,8 +115,30 @@ toSignin.addEventListener('click', () => switchTab('signin'));
 document.querySelectorAll('.auth-form').forEach(form => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
+
+        // Get the name from the visible form
+        let userName = "Trainer";
+        if (form.id === 'signinForm') {
+            userName = document.getElementById('signinName').value;
+        } else {
+            userName = document.getElementById('signupName').value;
+        }
+
+        // Update all name placeholders
+        document.querySelectorAll('.user-name').forEach(el => {
+            el.textContent = userName;
+        });
+
+        // Hide auth buttons and show profiles
+        document.querySelectorAll('.auth-btns-container, .auth-btns-container-mobile').forEach(el => {
+            el.style.display = 'none';
+        });
+        document.querySelectorAll('.user-profile').forEach(el => {
+            el.classList.add('active');
+        });
+
         const type = form.id === 'signinForm' ? 'Welcome back!' : 'Welcome to the Poké-World!';
-        alert(`${type} This is a demo. No data was saved.`);
+        alert(`${type} You are now logged in as ${userName}.`);
         authModal.classList.remove('active');
     });
 });

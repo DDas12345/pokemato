@@ -146,6 +146,22 @@ nav.scrolled {
     box-shadow: 0 6px 20px rgba(255, 31, 31, 0.5);
 }
 
+.user-profile {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.user-profile.active {
+    display: flex;
+}
+
+.user-name {
+    color: var(--primary-red);
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
