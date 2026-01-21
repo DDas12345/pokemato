@@ -53,3 +53,70 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         navLinks.classList.remove('active');
     });
 });
+
+// Modal Logic
+const authModal = document.getElementById('authModal');
+const closeModal = document.getElementById('closeModal');
+const signinBtns = document.querySelectorAll('.btn-signin');
+const signupBtns = document.querySelectorAll('.btn-signup');
+const authTabs = document.querySelectorAll('.auth-tab');
+const authForms = document.querySelectorAll('.auth-form');
+const toSignup = document.getElementById('toSignup');
+const toSignin = document.getElementById('toSignin');
+
+const openModal = (tab = 'signin') => {
+    authModal.classList.add('active');
+    switchTab(tab);
+};
+
+const switchTab = (tab) => {
+    authTabs.forEach(t => {
+        t.classList.toggle('active', t.dataset.tab === tab);
+    });
+    authForms.forEach(f => {
+        f.classList.toggle('active', f.id === `${tab}Form`);
+    });
+};
+
+signinBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        openModal('signin');
+        navLinks.classList.remove('active'); // Close mobile menu if open
+    });
+});
+
+signupBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        openModal('signup');
+        navLinks.classList.remove('active'); // Close mobile menu if open
+    });
+});
+
+closeModal.addEventListener('click', () => {
+    authModal.classList.remove('active');
+});
+
+authModal.addEventListener('click', (e) => {
+    if (e.target === authModal) {
+        authModal.classList.remove('active');
+    }
+});
+
+authTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        switchTab(tab.dataset.tab);
+    });
+});
+
+toSignup.addEventListener('click', () => switchTab('signup'));
+toSignin.addEventListener('click', () => switchTab('signin'));
+
+// Handle form submissions
+document.querySelectorAll('.auth-form').forEach(form => {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const type = form.id === 'signinForm' ? 'Welcome back!' : 'Welcome to the Poké-World!';
+        alert(`${type} This is a demo. No data was saved.`);
+        authModal.classList.remove('active');
+    });
+});
