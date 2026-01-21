@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ddas12345.github.io/pokemato/sitemap.xml
